@@ -55,7 +55,3 @@ Processing file {} of {}...
 {}
 """.format(current_num, total, os.path.basename(file_path))
     print(msg)
-
-
-
-

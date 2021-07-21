@@ -1,0 +1,5 @@
+pyinstaller
+python-docx
+pillow
+pywin32
+pyPDF2

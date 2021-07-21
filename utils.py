@@ -37,8 +37,11 @@ def get_image_paths(path: str, num_images: int):
 
     result = []
     base_path = path[:path.rfind('.')]
-    for x in range(num_images):
-        result.append("{} ({}).png".format(base_path, x + 1))
+    if num_images == 1:
+        result.append("{}.png".format(base_path))
+    else:
+        for x in range(num_images):
+            result.append("{} ({}).png".format(base_path, x + 1))
     return result
 
 

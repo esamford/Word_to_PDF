@@ -9,8 +9,7 @@ SET "external_imports=C:\Users\Ethan (Personal)\Google Drive\Computer Sync\Softw
 SET external_import_data="%external_imports%;external_imports\."
 
 venv\Scripts\pyinstaller --add-data %external_import_data% --onefile word_to_pdf.py
-venv\Scripts\pyinstaller --add-data %external_import_data% --onefile word_to_images.py
-venv\Scripts\pyinstaller --add-data %external_import_data% --onefile pdf_to_images.py
+venv\Scripts\pyinstaller --add-data %external_import_data% --onefile word_or_pdf_to_images.py
 
 
 RMDIR /Q /S build

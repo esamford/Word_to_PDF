@@ -1,5 +1,6 @@
-pyinstaller
-python-docx
-pillow
-pywin32
-pyPDF2
+pyinstaller==4.7
+python-docx==0.8.11
+pillow==8.4.0
+pywin32==302
+pyPDF2==1.26.0
+pdf2image==1.16.0

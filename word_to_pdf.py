@@ -1,7 +1,7 @@
 import sys
 
-from conversion_utils import convert_word_to_pdf
 import utils
+from word_2_pdf_2_image.conversion_utils import convert_word_to_pdf
 
 if __name__ == "__main__":
     for pos, arg in enumerate(sys.argv):

@@ -5,25 +5,6 @@ import docx
 import docx.document
 
 
-def import_word_doc(word_path: str):
-    assert isinstance(word_path, str)
-    assert os.path.exists(word_path)
-    assert os.path.isfile(word_path)
-
-    return docx.Document(word_path)
-
-
-def save_word_doc(word_doc: docx.document.Document, save_path: str):
-    assert isinstance(word_doc, docx.document.Document)
-    assert isinstance(save_path, str)
-
-    path = Path(save_path)
-    if not os.path.exists(path.parent):
-        os.makedirs(path.parent)
-
-    word_doc.save(save_path)
-
-
 def get_pdf_path(path: str):
     assert isinstance(path, str)
     pdf_path = path[:path.rfind('.')] + ".pdf"

@@ -1,8 +1,4 @@
 import os
-from pathlib import Path
-
-import docx
-import docx.document
 
 
 def get_pdf_path(path: str):

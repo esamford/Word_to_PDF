@@ -69,12 +69,22 @@ def convert_pdf_to_images(pdf_path: str) -> List[Image.Image]:
     except AttributeError:
         working_directory = os.getcwd()
 
-    poppler_path = os.path.join(working_directory, "resources", "poppler", "Library", "bin")
-    if not os.path.exists(poppler_path):
+    # Find the path to the poppler resource.
+    possible_paths = [
+        os.path.join(working_directory, "resources", "poppler", "Library", "bin"),  # If run as a .py file.
+        os.path.join(working_directory, "word_2_pdf_2_image", "resources", "poppler", "Library", "bin"),  # .exe file.
+    ]
+    poppler_path = None
+    for path in possible_paths:
+        if os.path.exists(path):
+            poppler_path = path
+            break
+    if poppler_path is None:
         raise Exception(
             "Cannot find path to Poppler resource, which is used to convert PDF pages to images. \n"
             "Please check that it was packaged correctly during the PyInstaller compile process."
         )
+
     return pdf2image.convert_from_path(
         pdf_path, poppler_path=poppler_path,
         dpi=300  # DPI of 300 is about the max someone can notice on the best printers.

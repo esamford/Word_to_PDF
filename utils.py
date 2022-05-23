@@ -1,4 +1,5 @@
 import os
+import time
 
 
 def get_pdf_path(path: str):
@@ -35,3 +36,16 @@ Processing file {} of {}...
 {}
 """.format(current_num, total, os.path.basename(file_path))
     print(msg)
+
+
+def print_drag_and_drop_message():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    msg = """
+This program imports files by dragging them onto the executable. Please select the Word
+document(s) you would like to convert and drop them onto this .exe file to get started.
+"""
+    print(msg)
+
+    time.sleep(30)
+
+
